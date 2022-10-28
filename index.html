@@ -23,13 +23,17 @@
         <main id="site_main">
             <div class="container">
                 <h1 class="my-4">Add a new task</h1>
-                <div class="row">
+                <div class="row row-cols-2">
                     <div class="col">
                         <div class="addTask d-flex flex-column align-items-start p-2">
                             <input v-model="taskText" class="p-1" @keyup.enter="addTask(taskText)" type="text" placeholder="Inserisci una nuova task">
                             <small v-show="!valid" class="text-danger py-1">Inserisci una task valida</small>
                             <button class="btn btn-primary my-2" @click="addTask(taskText)">Add</button>
                         </div>
+                    </div>
+                    <div class="col">
+                        <h2>Clean your tasks</h2>
+                        <button @click="cleanTasks" class="btn btn-primary">Clean</button>
                     </div>
                 </div>
                 <div class="row py-4">
