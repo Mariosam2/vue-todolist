@@ -36,7 +36,8 @@
                     <div class="col">
                         <h2>To Do</h2>
                         <ul class="taskList ps-4">
-                            <li v-for="(task, i) in tasks" :class="task.done ? 'text-decoration-line-through' : ''">{{task.text}}
+                            <li v-for="(task, i) in tasks" :class="task.done ? 'text-decoration-line-through' : ''"> 
+                            <span @click="setDone(task)">{{task.text}}</span> 
                             <i v-if="task.done" @click.stop="removeTask(i)" class="fa-regular fa-circle-check p-1 text-success"></i>
                             <i class="fa-regular fa-circle-xmark p-1 text-danger" @click.stop="removeTask(i)" v-else></i>
                             </li>

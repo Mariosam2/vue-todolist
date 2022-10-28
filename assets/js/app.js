@@ -72,6 +72,9 @@ createApp({
                 console.log(this.valid);
             }
             
+        },
+        setDone(task){
+            task.done = !task.done;
         }
     }
 }).mount('#app')

@@ -5,3 +5,7 @@ li i:hover {
 li:hover {
     cursor: default;
 }
+
+li {
+    width: fit-content;
+}
