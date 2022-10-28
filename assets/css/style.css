@@ -1,3 +1,7 @@
+li {
+    width: fit-content;
+}
+
 li i:hover {
     cursor: pointer;
 }
@@ -6,6 +10,3 @@ li:hover {
     cursor: default;
 }
 
-li {
-    width: fit-content;
-}
