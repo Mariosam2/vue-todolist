@@ -75,6 +75,20 @@ createApp({
         },
         setDone(task){
             task.done = !task.done;
+        },
+        cleanTasks(){
+            //console.log(this.tasks);
+            this.tasks = this.tasks.filter(function(task){
+                //console.log(task.done)
+                if(!task.done){
+                    console.log('elemento da rimuovere')
+                    return true;
+                }
+            })
+
+            console.log(this.task)
+
+            
         }
     }
 }).mount('#app')
