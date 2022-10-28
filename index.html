@@ -26,7 +26,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="addTask d-flex flex-column align-items-start p-2">
-                            <input class="p-1" type="text" v-model="taskText" placeholder="Inserisci una nuova task">
+                            <input v-model="taskText" class="p-1" @keyup.enter="addTask(taskText)" type="text" placeholder="Inserisci una nuova task">
                             <small v-show="!valid" class="text-danger py-1">Inserisci una task valida</small>
                             <button class="btn btn-primary my-2" @click="addTask(taskText)">Add</button>
                         </div>
