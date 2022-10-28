@@ -16,6 +16,8 @@ import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
 createApp({
     data() {
         return {
+            taskText: '',
+            valid: true,
             tasks: [
                 {
                     text: 'Fare esercizio del pomeriggio',
@@ -51,6 +53,25 @@ createApp({
     methods: {
         removeTask(index){
             this.tasks.splice(index, 1);
+        },
+        addTask(text){
+            const newTask = {
+                text: text,
+                done: false,
+            }
+            console.log(newTask);
+            console.log(this.valid);
+            if(this.taskText.length !== 0){
+                console.log(this.valid);
+                this.valid = true;
+                this.tasks.unshift(newTask);
+                this.taskText = '';
+            } else {
+
+                this.valid = false;
+                console.log(this.valid);
+            }
+            
         }
     }
 }).mount('#app')

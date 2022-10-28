@@ -23,21 +23,25 @@
         <main id="site_main">
             <div class="container">
                 <h1 class="my-4">Add a new task</h1>
-                <div class="addTask d-flex align-items-center">
-                    <input type="text" name="" id="">
-                    <button class="btn btn-primary mx-2">Click Me</button>
+                <div class="row">
+                    <div class="col">
+                        <div class="addTask d-flex flex-column align-items-start p-2">
+                            <input class="p-1" type="text" v-model="taskText" placeholder="Inserisci una nuova task">
+                            <small v-show="!valid" class="text-danger py-1">Inserisci una task valida</small>
+                            <button class="btn btn-primary my-2" @click="addTask(taskText)">Add</button>
+                        </div>
+                    </div>
                 </div>
                 <div class="row py-4">
                     <div class="col">
                         <h2>To Do</h2>
                         <ul class="taskList ps-4">
                             <li v-for="(task, i) in tasks" :class="task.done ? 'text-decoration-line-through' : ''">{{task.text}}
-                            <i v-if="task.done" @click.stop="removeTask(i)" class="fa-regular fa-circle-check p-1 text-succes"></i>
+                            <i v-if="task.done" @click.stop="removeTask(i)" class="fa-regular fa-circle-check p-1 text-success"></i>
                             <i class="fa-regular fa-circle-xmark p-1 text-danger" @click.stop="removeTask(i)" v-else></i>
                             </li>
-                            
                         </ul>
-                        <small class="text-secondary">* clicca sull' icona affianco alla task per rimuoverla</small>
+                        <small class="text-secondary">* clicca sull'icona affianco alla task per rimuoverla</small>
 
                     </div>
                     <!-- /.col -->
