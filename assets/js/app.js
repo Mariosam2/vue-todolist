@@ -59,17 +59,17 @@ createApp({
                 text: text,
                 done: false,
             }
-            console.log(newTask);
-            console.log(this.valid);
+            //console.log(newTask);
+            //console.log(this.valid);
             if(this.taskText.length !== 0){
-                console.log(this.valid);
+                //console.log(this.valid);
                 this.valid = true;
                 this.tasks.unshift(newTask);
                 this.taskText = '';
             } else {
 
                 this.valid = false;
-                console.log(this.valid);
+                //console.log(this.valid);
             }
             
         },
@@ -81,12 +81,12 @@ createApp({
             this.tasks = this.tasks.filter(function(task){
                 //console.log(task.done)
                 if(!task.done){
-                    console.log('elemento da rimuovere')
+                    //console.log('elemento da rimuovere')
                     return true;
                 }
             })
 
-            console.log(this.task)
+            //console.log(this.task)
 
             
         }
