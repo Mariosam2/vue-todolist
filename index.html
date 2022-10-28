@@ -31,9 +31,14 @@
                     <div class="col">
                         <h2>To Do</h2>
                         <ul class="taskList ps-4">
-                            <li v-for="task in tasks" :class="task.done ? 'text-decoration-line-through' : ''">{{task.text}}</li>
+                            <li v-for="(task, i) in tasks" :class="task.done ? 'text-decoration-line-through' : ''">{{task.text}}
+                            <i v-if="task.done" @click.stop="removeTask(i)" class="fa-regular fa-circle-check p-1 text-succes"></i>
+                            <i class="fa-regular fa-circle-xmark p-1 text-danger" @click.stop="removeTask(i)" v-else></i>
+                            </li>
+                            
                         </ul>
-                        
+                        <small class="text-secondary">* clicca sull' icona affianco alla task per rimuoverla</small>
+
                     </div>
                     <!-- /.col -->
                 </div>
